@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      form {
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 20px 60px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      input[type="email"],
+      input[type="password"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 16px;
+      }
+
+      input[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #4caf50;
+        border: none;
+        color: #fff;
+        border-radius: 3px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Login</h1>
+
+    <form action="/login" method="POST">
+      <p id="error-message" ></p>
+      <input type="email" name="email" placeholder="Email" />
+      <input type="password" name="password" placeholder="Password" />
+      <input type="submit" value="Login" />
+      <br><br>
+
+
+      <a href="/home">register</a>
+    </form>
+    <script>
+      // JavaScript code to display the error message
+      const urlParams = new URLSearchParams(window.location.search);
+      const error = urlParams.get('error');
+
+      if (error === 'error') {
+        displayErrorMessage('Something went wrong. Please try again.');
+      } else if (error === 'invalid') {
+        displayErrorMessage('Invalid email or password. Please try again.');
+      }
+
+      function displayErrorMessage(message) {
+        const errorContainer = document.getElementById('error-message');
+        errorContainer.innerText = message;
+        errorContainer.style.display = 'block';
+        errorContainer.style.color = 'red';
+      }
+    </script>
+  </body>
+</html>
