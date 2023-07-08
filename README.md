@@ -1,18 +1,7 @@
 # Login Express
 
-[![Build Status](https://img.shields.io/travis/VK2401/login-express.svg)](https://travis-ci.org/VK2401/login-express)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 Welcome to Login Express! This repository contains a login system created using Express.js, with CSRF token functionality to enhance security.
-
-## Table of Contents
-
-- [Getting Started](#getting-started)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Getting Started
 
